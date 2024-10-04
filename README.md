@@ -17,24 +17,7 @@ Alternatively, use the Approval tests provided in this repository. (Read more ab
 
 The idea of the exercise is to do some deliberate practice, and improve your skills at designing test cases and refactoring. The idea is not to re-write the code from scratch, but rather to practice taking small steps, running the tests often, and incrementally improving the design. 
 
-### Gilded Rose Requirements in other languages 
 
-- [English](GildedRoseRequirements.md)
-- [Español](GildedRoseRequirements_es.md)
-- [Français](GildedRoseRequirements_fr.md)
-- [Italiano](GildedRoseRequirements_it.md)
-- [日本語](GildedRoseRequirements_jp.md)
-- [Português](GildedRoseRequirements_pt-BR.md)
-- [Русский](GildedRoseRequirements_ru.md)
-- [ไทย](GildedRoseRequirements_th.md)
-- [中文](GildedRoseRequirements_zh.txt)
-- [한국어](GildedRoseRequirements_kr.md)
-- [German](GildedRoseRequirements_de.md)
-- [Euskara](GildedRoseRequirements_eu.md)
-
-## Text-Based Approval Testing
-
-Most language versions of this code have a [TextTest](https://texttest.org) fixture for Approval testing. For information about this, see the [TextTests README](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/texttests)
 
 ## History of the exercise
 
@@ -46,8 +29,32 @@ As Bobby Johnson points out in his article ["Why Most Solutions to Gilded Rose M
 better practice at handling a legacy code situation if you do this Kata in the original C#. However, I think this kata
 is also really useful for practicing writing good tests using different frameworks and approaches, and the small changes I've made help with that. I think it's also interesting to compare what the refactored code and tests look like in different programming languages.
 
-## Contributing
+# Gilded Rose starting position in Python
 
-Contributions are encouraged! You could add a translations of the specification
-in another language or a new starting point for your favorite programming
-language. Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
+For exercise instructions see [top level README](../README.md)
+
+Suggestion: create a python virtual environment for this project. See the [documentation](https://docs.python.org/3/library/venv.html)
+
+## Run the unit tests from the Command-Line
+
+```
+python test_gilded_rose.py
+```
+
+## Run the TextTest fixture from the Command-Line
+
+For e.g. 10 days:
+
+```
+python texttest_fixture.py 10
+```
+
+You should make sure the command shown above works when you execute it in a terminal before trying to use TextTest (see below).
+
+
+## Run the TextTest approval test that comes with this project
+
+There are instructions in the [TextTest Readme](../texttests/README.md) for setting up TextTest. You will need to specify the Python executable and interpreter in [config.gr](../texttests/config.gr). Uncomment these lines:
+
+    executable:${TEXTTEST_HOME}/python/texttest_fixture.py
+    interpreter:python

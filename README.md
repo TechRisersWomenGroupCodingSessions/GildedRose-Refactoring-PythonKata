@@ -1,4 +1,4 @@
-_Support this and all my katas via [Patreon](https://www.patreon.com/EmilyBache)_
+Python code for the GildedRose Refactoring Kata, forked from https://github.com/emilybache/GildedRose-Refactoring-Kata/
 
 # Gilded Rose Refactoring Kata
 

@@ -64,6 +64,18 @@ class GildedRoseTest(unittest.TestCase):
             self.assertEqual("Aged Brie", items[0].name)
             self.assertEqual(-i, items[0].sell_in)
             self.assertEqual(2 +(i*2), items[0].quality)
+    
+    def test_sulfuras_quality_unchanged(self):
+        item = Item(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80)
+        gilded_rose = GildedRose([item])
+        for i in range(1,100):
+            gilded_rose.update_quality()
+        self.assertEqual(80, item.quality)
+        self.assertEqual(0, item.sell_in)
+
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

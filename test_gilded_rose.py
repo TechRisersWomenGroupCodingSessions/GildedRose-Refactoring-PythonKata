@@ -31,6 +31,14 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEqual(-1, items[0].sell_in)
         self.assertEqual(16, items[0].quality)
 
+    def test_dexterity_vest_quality_not_below_zero(self):
+        items = [Item(name="+5 Dexterity Vest", sell_in=2, quality=20)]
+        gilded_rose = GildedRose(items)
+
+        for i in range(0,30):
+            gilded_rose.update_quality()
+
+        self.assertTrue(items[0].quality == 0)
 
     # def test_aged_brie(self):
     #     items = [Item(name="Aged Brie", sell_in=2, quality=0)]

@@ -40,18 +40,31 @@ class GildedRoseTest(unittest.TestCase):
 
         self.assertTrue(items[0].quality == 0)
 
-    # def test_aged_brie(self):
-    #     items = [Item(name="Aged Brie", sell_in=2, quality=0)]
-    #     gilded_rose = GildedRose(items)
-    #
-    #     for i in range(0,3):
-    #         gilded_rose.update_quality()
-    #
-    #         self.assertEqual("+5 Dexterity Vest", items[0].name)
-    #         self.assertEqual(9-i, items[0].sell_in)
-    #         self.assertEqual(19-i, items[0].quality)
+    def test_aged_brie(self):
+        items = [Item(name="Aged Brie", sell_in=2, quality=0)]
+        gilded_rose = GildedRose(items)
 
-        
+        for i in range(0,2):
+            gilded_rose.update_quality()
+
+            self.assertEqual("Aged Brie", items[0].name)
+            self.assertEqual(1-i, items[0].sell_in)
+            self.assertEqual(1+i, items[0].quality)
+
+    def test_aged_brie_after_sellIn(self):
+        items = [Item(name="Aged Brie", sell_in=2, quality=0)]
+        gilded_rose = GildedRose(items)
+
+        for i in range(0,2):
+            gilded_rose.update_quality()
+
+        for i in range(1,3):
+            gilded_rose.update_quality()
+
+            self.assertEqual("Aged Brie", items[0].name)
+            self.assertEqual(-i, items[0].sell_in)
+            self.assertEqual(2 +(i*2), items[0].quality)
+
 if __name__ == '__main__':
     unittest.main()
 
